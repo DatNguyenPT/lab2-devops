@@ -1,6 +1,8 @@
 ## Kubernetes 3-Tier Web App Deployment 🚀
 A full-stack deployment project for production-grade Kubernetes clusters. This setup features HAProxy load balancing, a GitOps-inspired CI/CD pipeline, and integrated monitoring with Prometheus and Grafana — all automated for scalability, security, and observability.
 
+Since the project deadline wasn’t too tight, Group 1 decided to expand the lab by adding HAProxy, monitoring, and observability tools to gain deeper hands-on experience and simulate a more realistic production environment.
+
 ---
 ## Authors
 
