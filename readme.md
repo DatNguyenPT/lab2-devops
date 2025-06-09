@@ -28,21 +28,6 @@ Since the project deadline wasn’t too tight, Group 1 decided to expand the lab
 
 📈 Auto-Scaling Ready: Horizontal scaling configurations available
 
-
-## 🏗️ Architecture Overview
-
-[ Developer ] --> [ Jenkins CI/CD ] --> [ Kubernetes Cluster (Kubespray) ]
-                                       |
-                                       |--> [ Frontend Pod ]
-                                       |--> [ Backend Pod ]
-                                       |--> [ Database Pod ]
-                                       |
-                                       |--> [ Prometheus + Grafana (Monitoring) ]
-                                       |
-                                       |--> [ Ingress Controller ]
- 
-[ User ] --> [ HAProxy Load Balancer (L4) ] --> [ Kubernetes API Servers + Apps ]
-
 ## 🚀 Getting Started
 ### Prerequisites
 - One or more servers (VMs or bare-metal) with:
