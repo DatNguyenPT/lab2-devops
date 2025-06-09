@@ -97,7 +97,7 @@ module "private-sg" {
 module "public-ec2" {
   source              = "./modules/ec2"
   vpc_id              = module.vpc.vpc_id
-  ami_id              = "ami-05778ef68e10b91d7"
+  ami_id              = "ami-0a7d80731ae1b2435"
   instance_type       = "t2.small"
   key_name            = "instance-keypair"
   subnet_id           = module.vpc.public_subnets[0]
@@ -113,7 +113,7 @@ module "public-ec2" {
 module "private-ec2" {
   source              = "./modules/ec2"
   vpc_id              = module.vpc.vpc_id
-  ami_id              = "ami-05778ef68e10b91d7"
+  ami_id              = "ami-0a7d80731ae1b2435"
   instance_type       = "t2.small"
   key_name            = "instance-keypair"
   subnet_id           = module.vpc.private_subnets[0]

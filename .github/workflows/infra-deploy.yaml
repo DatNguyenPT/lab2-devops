@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-      - lab2-datnguyen 
+      - lab2-datnguyen
   pull_request:
+  workflow_dispatch:  # Enables manual trigger
 
 permissions:
   id-token: write
@@ -38,7 +39,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.5.0 
+          terraform_version: 1.5.0
 
       - name: Terraform Init
         run: terraform init
@@ -48,12 +49,16 @@ jobs:
         with:
           directory: .
           framework: terraform
-          soft_fail: true 
-        continue-on-error: true 
+          soft_fail: true
+        continue-on-error: true
 
       - name: Terraform Plan
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'  
+        if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
+
+      - name: Terraform Destroy (Manual Only)
+        if: github.event_name == 'workflow_dispatch'
+        run: terraform destroy -auto-approve
